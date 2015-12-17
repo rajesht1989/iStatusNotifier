@@ -27,6 +27,7 @@
 }
 - (IBAction)showMessageTapped:(id)sender
 {
+    [self.view endEditing:YES];
     [[[iStatusNotifier sharedInstance] lblMessage] setBackgroundColor:[UIColor colorWithRed:[[redRef text] integerValue] green:[[greenRef text] integerValue] blue:[[blueRef text] integerValue] alpha:1.]];
     [iStatusNotifier showStatusBarAlert:tfmessage.text];
 }

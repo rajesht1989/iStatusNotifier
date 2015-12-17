@@ -11,18 +11,6 @@
 @end
 
 @implementation iStatusNotifier
-+ (void)showStatusBarAlert:(NSString *)stMessage
-{
-    [[[iStatusNotifier sharedInstance] lblMessage] setText:stMessage];
-    [[[iStatusNotifier sharedInstance] lblMessage] setAlpha:0.];
-    [UIView animateWithDuration:0.5f delay:0. options:UIViewAnimationOptionTransitionFlipFromTop animations:^{
-                         [[[iStatusNotifier sharedInstance] lblMessage] setAlpha:1.];
-                     } completion:^(BOOL finished) {
-                             [UIView animateWithDuration:0.5f delay:[[iStatusNotifier sharedInstance] iDuration] options:UIViewAnimationOptionTransitionFlipFromBottom animations:^{
-                                 [[[iStatusNotifier sharedInstance] lblMessage] setAlpha:0.];
-                             }completion:nil];
-                     }];
-}
 
 + (instancetype)sharedInstance
 {
@@ -39,8 +27,26 @@
         [objNotifier.lblMessage setTextAlignment:NSTextAlignmentCenter];
         [objNotifier.statusWindow addSubview:objNotifier.lblMessage];
         [[[iStatusNotifier sharedInstance] lblMessage] setAlpha:0.];
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didRotate:) name:UIDeviceOrientationDidChangeNotification object:nil];
     }
     return objNotifier;
+}
+
++ (void)showStatusBarAlert:(NSString *)stMessage
+{
+    [[[iStatusNotifier sharedInstance] lblMessage] setText:stMessage];
+    [[[iStatusNotifier sharedInstance] lblMessage] setAlpha:0.];
+    [UIView animateWithDuration:0.5f delay:0. options:UIViewAnimationOptionTransitionFlipFromTop animations:^{
+                         [[[iStatusNotifier sharedInstance] lblMessage] setAlpha:1.];
+                     } completion:^(BOOL finished) {
+                             [UIView animateWithDuration:0.5f delay:[[iStatusNotifier sharedInstance] iDuration] options:UIViewAnimationOptionTransitionFlipFromBottom animations:^{
+                                 [[[iStatusNotifier sharedInstance] lblMessage] setAlpha:0.];
+                             }completion:nil];
+                     }];
+}
+
++ (void)didRotate:(NSNotification *)notification {
+    [[[iStatusNotifier sharedInstance] lblMessage] setAlpha:0.];
 }
 
 @end
