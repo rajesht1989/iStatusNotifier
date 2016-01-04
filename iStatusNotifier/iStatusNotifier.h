@@ -12,8 +12,9 @@
 @interface iStatusNotifier : NSObject
 
 + (instancetype)sharedInstance;
-
 + (void)showStatusBarAlert:(NSString *)stMessage;
++ (void)showStatusBarAlert:(NSString *)stMessage completion:(void (^)(void))completion;
++ (void)dismiss;
 
 @property(nonatomic,strong) UILabel *lblMessage;
 @property(nonatomic,assign) NSInteger iDuration;
