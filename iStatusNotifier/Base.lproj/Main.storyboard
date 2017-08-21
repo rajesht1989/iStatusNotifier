@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13178.6" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13178.6" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="7eB-vW-CIk">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--iStatusNotifier-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
@@ -22,7 +22,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="W2f-jQ-jPq">
-                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b3c-az-0WR">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="389"/>
@@ -152,7 +152,7 @@
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="W2f-jQ-jPq" secondAttribute="bottom" id="YfA-bd-Tbk"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="KBg-Jv-10J"/>
+                    <navigationItem key="navigationItem" title="iStatusNotifier" id="KBg-Jv-10J"/>
                     <connections>
                         <outlet property="bgSlider" destination="Kz1-i4-BZP" id="MTi-qy-FfP"/>
                         <outlet property="fgSlider" destination="3qd-zd-3rk" id="a1M-t4-5gO"/>
@@ -162,7 +162,25 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1037.5999999999999" y="341.37931034482762"/>
+            <point key="canvasLocation" x="1376.8" y="341.37931034482762"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="xsV-Lx-3Gc">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="7eB-vW-CIk" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="w0C-4v-0oM">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="t0y-Pj-hI4"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Vwl-hV-fb3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="100" y="341"/>
         </scene>
     </scenes>
 </document>
