@@ -8,15 +8,13 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
+@interface iStatusNotifier : UIWindow
 
-@interface iStatusNotifier : NSObject
-
-+ (instancetype)sharedInstance;
-+ (void)showStatusBarAlert:(NSString *)stMessage;
-+ (void)showStatusBarAlert:(NSString *)stMessage completion:(void (^)(void))completion;
-+ (void)dismiss;
-
-@property(nonatomic,strong) UILabel *lblMessage;
-@property(nonatomic,assign) NSInteger iDuration;
++ (void)configure:(NSDictionary *)dict; //@{@"bgColor":[UIColor redColor],@"fgColor":[UIColor whiteColor],@"font":[UIFont systemFontOfSize:25]}
++ (void)showMessage:(NSString *)message; // 1 secod default
++ (void)showNeverStopMessage:(NSString *)message;
++ (void)showMessage:(NSString *)message duration:(NSInteger)interval;
++ (BOOL)isVisible;
++ (void)interrupt;
 
 @end

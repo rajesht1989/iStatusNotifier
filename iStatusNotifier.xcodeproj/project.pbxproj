@@ -10,17 +10,36 @@
 		921AAF871AC2F21800CD1850 /* iStatusNotifier.m in Sources */ = {isa = PBXBuildFile; fileRef = 921AAF861AC2F21800CD1850 /* iStatusNotifier.m */; };
 		925710191C21847A0029FEC0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 925710171C21847A0029FEC0 /* Assets.xcassets */; };
 		9257101A1C21847A0029FEC0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 925710181C21847A0029FEC0 /* LaunchScreen.storyboard */; };
+		92879F8B1F4B047B009E36BA /* RGSPreviewView.m in Sources */ = {isa = PBXBuildFile; fileRef = 92879F881F4B047B009E36BA /* RGSPreviewView.m */; };
+		92879F8C1F4B047B009E36BA /* RGSColorSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = 92879F891F4B047B009E36BA /* RGSColorSlider.m */; };
 		92FE95E61AC28CBD00D9BC8A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 92FE95E51AC28CBD00D9BC8A /* main.m */; };
 		92FE95E91AC28CBD00D9BC8A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 92FE95E81AC28CBD00D9BC8A /* AppDelegate.m */; };
 		92FE95EC1AC28CBD00D9BC8A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 92FE95EB1AC28CBD00D9BC8A /* ViewController.m */; };
 		92FE95EF1AC28CBD00D9BC8A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 92FE95ED1AC28CBD00D9BC8A /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		92879F831F4825B9009E36BA /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		921AAF851AC2F21800CD1850 /* iStatusNotifier.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iStatusNotifier.h; sourceTree = "<group>"; };
 		921AAF861AC2F21800CD1850 /* iStatusNotifier.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iStatusNotifier.m; sourceTree = "<group>"; };
 		925710171C21847A0029FEC0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		925710181C21847A0029FEC0 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		92879F871F4B047B009E36BA /* RGSColorSlider.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RGSColorSlider.h; sourceTree = "<group>"; };
+		92879F881F4B047B009E36BA /* RGSPreviewView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RGSPreviewView.m; sourceTree = "<group>"; };
+		92879F891F4B047B009E36BA /* RGSColorSlider.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RGSColorSlider.m; sourceTree = "<group>"; };
+		92879F8A1F4B047B009E36BA /* RGSPreviewView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RGSPreviewView.h; sourceTree = "<group>"; };
 		92FE95E01AC28CBD00D9BC8A /* iStatusNotifier.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iStatusNotifier.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		92FE95E41AC28CBD00D9BC8A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		92FE95E51AC28CBD00D9BC8A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -67,6 +86,10 @@
 				92FE95EB1AC28CBD00D9BC8A /* ViewController.m */,
 				921AAF851AC2F21800CD1850 /* iStatusNotifier.h */,
 				921AAF861AC2F21800CD1850 /* iStatusNotifier.m */,
+				92879F871F4B047B009E36BA /* RGSColorSlider.h */,
+				92879F891F4B047B009E36BA /* RGSColorSlider.m */,
+				92879F8A1F4B047B009E36BA /* RGSPreviewView.h */,
+				92879F881F4B047B009E36BA /* RGSPreviewView.m */,
 				92FE95ED1AC28CBD00D9BC8A /* Main.storyboard */,
 				925710171C21847A0029FEC0 /* Assets.xcassets */,
 				925710181C21847A0029FEC0 /* LaunchScreen.storyboard */,
@@ -94,6 +117,7 @@
 				92FE95DC1AC28CBD00D9BC8A /* Sources */,
 				92FE95DD1AC28CBD00D9BC8A /* Frameworks */,
 				92FE95DE1AC28CBD00D9BC8A /* Resources */,
+				92879F831F4825B9009E36BA /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -114,6 +138,8 @@
 				TargetAttributes = {
 					92FE95DF1AC28CBD00D9BC8A = {
 						CreatedOnToolsVersion = 6.2;
+						DevelopmentTeam = RDBAA992Q3;
+						ProvisioningStyle = Manual;
 					};
 				};
 			};
@@ -156,6 +182,8 @@
 				92FE95EC1AC28CBD00D9BC8A /* ViewController.m in Sources */,
 				921AAF871AC2F21800CD1850 /* iStatusNotifier.m in Sources */,
 				92FE95E91AC28CBD00D9BC8A /* AppDelegate.m in Sources */,
+				92879F8C1F4B047B009E36BA /* RGSColorSlider.m in Sources */,
+				92879F8B1F4B047B009E36BA /* RGSPreviewView.m in Sources */,
 				92FE95E61AC28CBD00D9BC8A /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -256,22 +284,41 @@
 		92FE96041AC28CBD00D9BC8A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = RDBAA992Q3;
+				EMBED_ASSET_PACKS_IN_PRODUCT_BUNDLE = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/iStatusNotifier",
+				);
 				INFOPLIST_FILE = iStatusNotifier/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks\n";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.MyOrg.iCreater.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "5b7ea784-3009-4819-8f9d-5da502b3445c";
+				PROVISIONING_PROFILE_SPECIFIER = WildCard;
 			};
 			name = Debug;
 		};
 		92FE96051AC28CBD00D9BC8A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
+				EMBED_ASSET_PACKS_IN_PRODUCT_BUNDLE = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/iStatusNotifier",
+				);
 				INFOPLIST_FILE = iStatusNotifier/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks\n";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.MyOrg.iCreater.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Release;
 		};
