@@ -6,6 +6,9 @@
 //
 
 #import "iStatusNotifier.h"
+#import "AppDelegate.h"
+
+#define isIphone10 [(AppDelegate *)[[UIApplication sharedApplication] delegate] isIphoneX]
 
 @interface iStatusViewController : UIViewController
 
@@ -18,6 +21,7 @@
 @implementation iStatusViewController
 
 - (UILabel *)messageLabel {
+    
     if (_messageLabel == nil) {
         _messageLabel = [[UILabel alloc] initWithFrame:self.view.bounds];
         [self.view addSubview:_messageLabel];
@@ -35,9 +39,11 @@
     __block CGRect statusBarRect;
     if (show) {
         [_owner setHidden:NO];
-        _screenshotView = [[UIScreen mainScreen] snapshotViewAfterScreenUpdates:NO];
-        [self.view addSubview:_screenshotView];
-        [_screenshotView setAutoresizingMask:UIViewAutoresizingFlexibleWidth];
+        if (isIphone10 == NO) {
+            _screenshotView = [[UIScreen mainScreen] snapshotViewAfterScreenUpdates:NO];
+            [self.view addSubview:_screenshotView];
+            [_screenshotView setAutoresizingMask:UIViewAutoresizingFlexibleWidth];
+        }
         
         messageLabelRect = [[self messageLabel] frame];
         messageLabelRect.origin.y = -self.view.bounds.size.height;
@@ -149,37 +155,33 @@
     if ([topViewController isKindOfClass:[UITabBarController class]]) {
         topViewController = [(UITabBarController *)topViewController selectedViewController];
     }
-    switch ([[UIApplication sharedApplication] statusBarOrientation]) {
-        case UIInterfaceOrientationPortraitUpsideDown :
-            return statusBarFrame;
-            break;
-        case UIInterfaceOrientationLandscapeLeft :
-            if (isIphone && topViewController.prefersStatusBarHidden) {
-                if ([topViewController isKindOfClass:[UINavigationController class]]) {
-                    statusBarFrame = mainScreenBounds;
-                    statusBarFrame.size.height = [[(UINavigationController *)topViewController navigationBar] bounds].size.height;
-                } else {
-                    statusBarFrame = mainScreenBounds;
-                    statusBarFrame.size.height = 20;
+    if (isIphone10) {
+        CGFloat statusBarHeight = topViewController.prefersStatusBarHidden ? 0 : statusBarFrame.size.height;
+        if ([topViewController isKindOfClass:[UINavigationController class]]) {
+            statusBarFrame = mainScreenBounds;
+            statusBarFrame.size.height = [[(UINavigationController *)topViewController navigationBar] bounds].size.height;
+        } else {
+            statusBarFrame = mainScreenBounds;
+            statusBarFrame.size.height = 20;
+        }
+        statusBarFrame.origin.y = statusBarHeight;
+    } else {
+        switch ([[UIApplication sharedApplication] statusBarOrientation]) {
+            case UIInterfaceOrientationLandscapeLeft :
+            case UIInterfaceOrientationLandscapeRight :
+                if (isIphone && topViewController.prefersStatusBarHidden) {
+                    if ([topViewController isKindOfClass:[UINavigationController class]]) {
+                        statusBarFrame = mainScreenBounds;
+                        statusBarFrame.size.height = [[(UINavigationController *)topViewController navigationBar] bounds].size.height;
+                    } else {
+                        statusBarFrame = mainScreenBounds;
+                        statusBarFrame.size.height = 20;
+                    }
                 }
-            }
-            return statusBarFrame;
-            break;
-        case UIInterfaceOrientationLandscapeRight :
-            if (isIphone && topViewController.prefersStatusBarHidden) {
-                if ([topViewController isKindOfClass:[UINavigationController class]]) {
-                    statusBarFrame = mainScreenBounds;
-                    statusBarFrame.size.height = [[(UINavigationController *)topViewController navigationBar] bounds].size.height;
-                } else {
-                    statusBarFrame = mainScreenBounds;
-                    statusBarFrame.size.height = 20;
-                }
-            }
-            return statusBarFrame;
-            break;
-        default:
-            return statusBarFrame;
-            break;
+                break;
+            default:
+                break;
+        }
     }
     return statusBarFrame;
 }

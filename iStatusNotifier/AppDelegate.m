@@ -6,6 +6,7 @@
 //
 
 #import "AppDelegate.h"
+#import <sys/utsname.h>
 
 @interface AppDelegate ()
 
@@ -15,7 +16,10 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    struct utsname systemInfo;
+    uname(&systemInfo);
+    NSString *deviceName = [NSString stringWithCString:systemInfo.machine encoding:NSUTF8StringEncoding];
+    _isIphoneX = [deviceName isEqualToString:@"iPhone10,3"] || [deviceName isEqualToString:@"iPhone10,6"];
     return YES;
 }
 
